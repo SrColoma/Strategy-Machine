@@ -9,7 +9,7 @@ Implementation of a strategy machine for Godot Engine, similar to a state machin
 4. extend a new script from `MachineController` and implement behavior between strategies.
 5. extend a new script from `Strategy` and implement the `_enter_strategy`, `_exit_strategy` methods.
    
-![alt text](captures/example.png)
+<!-- ![alt text](captures/example.png) -->
 
 ## MachineController
 

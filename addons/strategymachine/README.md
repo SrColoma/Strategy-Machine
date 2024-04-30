@@ -4,14 +4,14 @@ Implementation of a strategy machine for Godot Engine, similar to a state machin
 
 ## How to use
 1. add a new node `StrategyMachine` node as a child.
-2. add a new node `MachineController` as a child of the `StrategyMachine` node and change the node name.
+2. add a new node `StrategyController` as a child of the `StrategyMachine` node and change the node name.
 3. add a new node `Strategy` as a child of the `StrategyMachine` node and change the node name.
-4. extend a new script from `MachineController` and implement behavior between strategies.
+4. extend a new script from `StrategyController` and implement behavior between strategies.
 5. extend a new script from `Strategy` and implement the `_enter_strategy`, `_exit_strategy` methods.
    
 <!-- ![alt text](captures/example.png) -->
 
-## MachineController
+## StrategyController
 
 ### `func switch_strategy_to(strategy_name: String)`
 
@@ -50,7 +50,7 @@ Called when the strategy is disabled.
 ## Example
 
 ```gd
-extends MachineController
+extends StrategyController
 
 func _ready():
     switch_strategy_to("Strategy1")

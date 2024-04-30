@@ -57,6 +57,6 @@ func _set_strategies_and_controllers():
 	for child in get_children():
 		if child is Strategy:
 			strategies[child.name] = child
-		elif child is MachineController:
+		elif child is StrategyController:
 			controllers[child.name] = child
 

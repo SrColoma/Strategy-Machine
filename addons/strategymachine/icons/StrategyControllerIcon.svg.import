@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bw4jtol8csk1j"
-path="res://.godot/imported/MachineControllerIcon.svg-a19fef4753a570e1a3dbedeee744c009.ctex"
+path="res://.godot/imported/StrategyControllerIcon.svg-7f0f43f1ce2d84346e543cc19241cce4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/strategymachine/icons/MachineControllerIcon.svg"
-dest_files=["res://.godot/imported/MachineControllerIcon.svg-a19fef4753a570e1a3dbedeee744c009.ctex"]
+source_file="res://addons/strategymachine/icons/StrategyControllerIcon.svg"
+dest_files=["res://.godot/imported/StrategyControllerIcon.svg-7f0f43f1ce2d84346e543cc19241cce4.ctex"]
 
 [params]
 

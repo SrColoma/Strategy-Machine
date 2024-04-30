@@ -10,10 +10,10 @@ func _enter_tree():
 		preload("icons/StrategyMachineIcon.svg")
 	)
 	add_custom_type(
-		"MachineController",
+		"StrategyController",
 		"Node",
-		preload("src/MachineController.gd"),
-		preload("icons/MachineControllerIcon.svg")
+		preload("src/StrategyController.gd"),
+		preload("icons/StrategyControllerIcon.svg")
 	)
 	add_custom_type(
 		"Strategy",
@@ -25,5 +25,5 @@ func _enter_tree():
 
 func _exit_tree():
 	remove_custom_type("StrategyMachine")
-	remove_custom_type("MachineController")
+	remove_custom_type("StrategyController")
 	remove_custom_type("Strategy")

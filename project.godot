@@ -13,6 +13,7 @@ config_version=5
 config/name="strategyMachine"
 config/tags=PackedStringArray("addon")
 config/features=PackedStringArray("4.2", "Forward Plus")
+config/icon="res://icon.png"
 
 [editor_plugins]
 

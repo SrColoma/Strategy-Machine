@@ -1,6 +1,5 @@
 # gdProject specific ignores
 debug/
-src/
 # Godot 4+ specific ignores
 .godot/
 

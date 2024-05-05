@@ -22,9 +22,6 @@ var target_strategy : Strategy
 ## Parent node of [StrategyMachine] accessible by any [Strategy] or [MachineController].
 @onready var user_node: Node = get_parent()
 
-func _ready():
-	_set_strategies_and_controllers()
-
 
 ## Switches off the current [target_strategy] and switches on the strategy with the name [code]strategy_name[/code]
 func switch_strategy_to(strategy_name:String):
@@ -57,6 +54,12 @@ func _set_strategies_and_controllers():
 	for child in get_children():
 		if child is Strategy:
 			strategies[child.name] = child
+			if child.is_enabled:
+				target_strategy = child
 		elif child is StrategyController:
 			controllers[child.name] = child
 
+func _notification(what):
+	match what:
+		NOTIFICATION_READY:
+			_set_strategies_and_controllers()

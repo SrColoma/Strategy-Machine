@@ -9,6 +9,9 @@ extends StrategyMachineComponent
 ## In this node, the behavior of [Strategy] changes must be defined. [br]
 ## You can use more than one [MachineController] per [StrategyMachine]. [br]
 
+func _init():
+	process_mode = Node.PROCESS_MODE_ALWAYS
+
 ## Turns off the current [Strategy] and switches to the strategy with the name [code]strategy_name[/code].
 ## This function simplifies the use of the machine by abstracting access to the machine first.
 func switch_strategy_to(strategy_name: String):

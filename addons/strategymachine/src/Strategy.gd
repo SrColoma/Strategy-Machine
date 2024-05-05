@@ -5,32 +5,30 @@ extends StrategyMachineComponent
 ## Node used to implement a specific [Strategy].
 ##
 ## Strategies are controlled by machine controllers and are initially disabled before entering the [scene_tree].
-## It is recommended to override [code]_enter_strategy()[/code] and [code]_exit_strategy()[/code].
+
+## Emited when the [Strategy] is enabled.
+signal enter_strategy
+
+## Emited when the [Strategy] is disabled.
+signal exit_strategy
 
 ## Used to check if a [Strategy] is enabled or disabled.
-var is_enabled
+@export var is_enabled : bool = false
 
-func _init():
-	disable()
 
 ## Enables the strategy and executes [code]_enter_strategy()[/code].
 func enable():
-	_enter_strategy()
+	enter_strategy.emit()
 	is_enabled = true
 	process_mode = Node.PROCESS_MODE_INHERIT
 
 ## Disables the strategy and executes [code]_exit_strategy()[/code].
 func disable():
-	_exit_strategy()
+	exit_strategy.emit()
 	is_enabled = false
 	process_mode = Node.PROCESS_MODE_DISABLED
-
-## Executed when the [Strategy] is enabled.
-## This method should be overridden.
-func _enter_strategy():
-	pass
-
-## Executed when the [Strategy] is disabled.
-## This method should be overridden.
-func _exit_strategy():
-	pass
+	
+func _notification(what):
+	match what:
+		NOTIFICATION_READY:
+			enable() if is_enabled else disable()
